@@ -85,3 +85,7 @@ Como usuário,
 eu desejo poder recuperar minha senha, 
 para poder acessar minha conta
 ```
+
+> UseCase Diagram
+
+![Diagrama de Caso de Uso](UseCaseDiagram.png)
