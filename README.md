@@ -64,3 +64,17 @@ Como usuário,
 eu desejo que minha conta seja protegida por uma senha
 para que ninguém possa acessá-la
 ```
+
+### US10
+```
+Como aluno, 
+eu desejo poder me cadastrar em disciplinas obrigatórias e optativas, 
+para que eu possa montar minha grade de estudos personalizada
+```
+
+### US11
+```
+Como secretaria, 
+eu desejo poder cadastrar e modificar os cursos, 
+para poder determinar o número de créditos e as disciplinas que o compõe 
+```
