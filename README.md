@@ -12,8 +12,8 @@ para manter as informações sobre as disciplinas, professores e alunos.
 ### US02
 ```
 Como aluno,
-eu desejo poder acessar o sistema
-para me matricular em uma disciplina
+eu desejo poder me matricular em disciplinas obrigatórias
+para que eu possa montar minha grade de estudos
 ```
 
 ### US03
@@ -68,7 +68,7 @@ para que ninguém possa acessá-la
 ### US10
 ```
 Como aluno, 
-eu desejo poder me cadastrar em disciplinas obrigatórias e optativas, 
+eu desejo poder me cadastrar em disciplinas optativas, 
 para que eu possa montar minha grade de estudos personalizada
 ```
 
