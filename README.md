@@ -19,8 +19,8 @@ para que eu possa montar minha grade de estudos
 ### US03
 ```
 Como aluno,
-eu desejo poder acessar o sistema
-para cancelar uma matricula feita anteriormente
+eu desejo poder cancelar minha matrícula,
+para que eu possa desistir de um curso quando necessário 
 ```
 
 ### US04
@@ -77,4 +77,11 @@ para que eu possa montar minha grade de estudos personalizada
 Como secretaria, 
 eu desejo poder cadastrar e modificar os cursos, 
 para poder determinar o número de créditos e as disciplinas que o compõe 
+```
+
+### US12
+```
+Como usuário, 
+eu desejo poder recuperar minha senha, 
+para poder acessar minha conta
 ```
