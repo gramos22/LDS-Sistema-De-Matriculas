@@ -1,10 +1,38 @@
-# Laboratório 01 - Sistema de Matrículas
+# Sistema de Matrículas
+Este repositório contém o projeto do Sistema de Matrículas desenvolvido para a disciplina de Laboratório de Desenvolvimento de Software, do curso de Engenharia de Software na PUC Minas.
 
-> User Stories
+## Integrantes do grupo
+* [Gabriel Ramos](https://github.com/gramos22)
+
+* [João Pedro Braga](https://github.com/joaopedro-braga)
+
+* [Júlia Moreira Nascimento](https://github.com/JulyaMoreyra)
+
+## Descrição do Projeto
+O Sistema de Matrículas é um software desenvolvido para informatizar o processo de matrícula em disciplinas de uma universidade. 
+
+O sistema permite que alunos se matriculem em disciplinas obrigatórias e optativas, além de possibilitar o cancelamento de matrículas.
+
+O sistema também gera notificações para o sistema de cobranças da universidade e fornece aos professores uma visão sobre quais alunos estão matriculados em suas disciplinas.
+
+### Funcionalidades
+* **Cadastro de Disciplinas:** Permite à secretaria da universidade cadastrar disciplinas, associando professores e alunos.
+* **Matrícula em Disciplinas:** Os alunos podem se matricular em até 4 disciplinas obrigatórias e 2 optativas.
+* **Cancelamento de Matrícula:** Os alunos podem cancelar suas matrículas dentro do período estabelecido.
+* **Controle de Vagas:** Cada disciplina tem um limite de vagas, sendo ativada apenas se houver um número mínimo de alunos matriculados.
+* **Notificações de Cobrança:** Integração com o sistema de cobranças para geração de boletos conforme as matrículas realizadas.
+* **Consulta de Matrículas:** Professores podem consultar a lista de alunos matriculados em suas disciplinas.
+
+### Tecnologias Utilizadas
+* **Linguagem de Programação:** Java
+* **Ferramentas de Modelagem:** Astah, draw.io
+* **Controle de Versão:** Git/GitHub
+
+## Histórias de Usuário
 
 ### US01
 ```
-Como secretaria, 
+Como secretaria,
 eu desejo poder gerar um currículo para cada semestre
 para manter as informações sobre as disciplinas, professores e alunos.
 ```
@@ -86,6 +114,6 @@ eu desejo poder recuperar minha senha,
 para poder acessar minha conta
 ```
 
-> UseCase Diagram
+## Diagrama de Caso de Uso
 
 ![Diagrama de Caso de Uso](UseCaseDiagram.png)
