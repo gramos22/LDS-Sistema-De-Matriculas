@@ -116,4 +116,8 @@ para poder acessar minha conta
 
 ## Diagrama de Caso de Uso
 
-![Diagrama de Caso de Uso](UseCaseDiagram.png)
+![Diagrama de Caso de Uso](docs/UseCaseDiagram.png)
+
+## Diagrama de Classe 
+
+Confira o diagrama no Figma: [Acessar Design]([https://www.figma.com/file/XXXXXX/Seu-Design](https://www.figma.com/board/Th7yAG7cy99eHgFXyXoaOa/Class-Diagram---Enrollment-System?node-id=0-1&t=nfERT34drKPhAzjv-0))
