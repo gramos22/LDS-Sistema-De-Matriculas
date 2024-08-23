@@ -120,5 +120,5 @@ para poder acessar minha conta
 
 ## Diagrama de Classe 
 
-![Diagrama de Classe](docs/Class Diagram.png)
+![Diagrama de Classe](docs/ClassDiagram.png)
 [Acessar Figma](https://www.figma.com/board/Th7yAG7cy99eHgFXyXoaOa/Class-Diagram---Enrollment-System?node-id=0-1&t=nfERT34drKPhAzjv-0)
