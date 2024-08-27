@@ -1,9 +1,9 @@
-package com.lds.sistema_de_matriculas.models;
+package com.lds.sistema_de_matriculas.domain.model;
 
 
 import java.util.Set;
 
-import com.lds.sistema_de_matriculas.enums.CourseTypeEnum;
+import com.lds.sistema_de_matriculas.domain.enums.CourseTypeEnum;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

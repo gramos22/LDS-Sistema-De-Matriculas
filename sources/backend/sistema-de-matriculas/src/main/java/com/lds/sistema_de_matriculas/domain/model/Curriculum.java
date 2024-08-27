@@ -1,4 +1,4 @@
-package com.lds.sistema_de_matriculas.models;
+package com.lds.sistema_de_matriculas.domain.model;
 
 import java.sql.Date;
 import java.util.Set;
@@ -47,5 +47,9 @@ public class Curriculum {
 
     @OneToMany(mappedBy = "curriculum", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Subject> subjects;
+
+    public boolean addSubject(Subject subject) {
+        return subjects.add(subject);
+    }
 
 }

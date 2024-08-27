@@ -1,4 +1,4 @@
-package com.lds.sistema_de_matriculas.models;
+package com.lds.sistema_de_matriculas.domain.model;
 
 import java.sql.Date;
 import java.util.Set;
@@ -50,10 +50,18 @@ public class CurriculumGrid {
 
     @ManyToMany
     @JoinTable(
-        name = "curriculumgrid_subject",
+        name = "curriculum_grid_subject",
         joinColumns = @JoinColumn(name = "curriculum_grid_id"),
         inverseJoinColumns = @JoinColumn(name = "subject_id")
     )
     private Set<Subject> subjects;
+
+    public boolean addSubject(Subject subject) {
+        return subjects.add(subject);
+    }
+
+    public boolean removeSubject(Subject subject) {
+        return subjects.remove(subject);
+    }
 
 }

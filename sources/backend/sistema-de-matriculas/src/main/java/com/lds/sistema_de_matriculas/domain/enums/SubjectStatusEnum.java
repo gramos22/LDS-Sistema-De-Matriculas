@@ -1,4 +1,4 @@
-package com.lds.sistema_de_matriculas.enums;
+package com.lds.sistema_de_matriculas.domain.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

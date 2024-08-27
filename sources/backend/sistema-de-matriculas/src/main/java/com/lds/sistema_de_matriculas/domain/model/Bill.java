@@ -1,6 +1,7 @@
-package com.lds.sistema_de_matriculas.models;
+package com.lds.sistema_de_matriculas.domain.model;
 
 import java.sql.Date;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -36,13 +37,22 @@ public class Bill {
 
     @Column(name = "due_date")
     @Temporal(TemporalType.DATE)
-    private Date data;
+    private Date dueDate;
 
-    @Column(name = "paid")
-    private boolean paid = false;
+    @Column(name = "is_paid")
+    private boolean isPaid = false;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id", nullable = false)
     private Student student;
-    
+
+    public Double calculatePrice(CurriculumGrid curriculumGrid) {
+        Double total = 0.0;
+
+        for (Subject subject : curriculumGrid.getSubjects()) {
+            total += subject.getPrice();
+        }
+
+        return total;
+    }
 }

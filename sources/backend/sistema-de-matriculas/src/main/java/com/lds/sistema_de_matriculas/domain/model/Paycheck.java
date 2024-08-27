@@ -1,4 +1,4 @@
-package com.lds.sistema_de_matriculas.models;
+package com.lds.sistema_de_matriculas.domain.model;
 
 import java.sql.Date;
 
@@ -37,10 +37,10 @@ public class Paycheck {
 
     @Column(name = "payment_date")
     @Temporal(TemporalType.DATE)
-    private Date date;
+    private Date paymentDate;
 
-    @Column(name = "paid")
-    private boolean paid = false;
+    @Column(name = "is_paid")
+    private boolean isPaid = false;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "professor_id", nullable = false)

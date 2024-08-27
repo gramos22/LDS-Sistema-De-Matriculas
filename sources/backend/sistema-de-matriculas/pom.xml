@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.lds</groupId>
 	<artifactId>sistema-de-matriculas</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>Sistema de Matriculas</name>
 	<description>Laboratorio #1 - Laboratório de Desenvolvimento de Software</description>
 	<url/>

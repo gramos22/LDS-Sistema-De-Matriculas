@@ -1,9 +1,9 @@
-package com.lds.sistema_de_matriculas.models;
+package com.lds.sistema_de_matriculas.domain.model;
 
 import java.util.Set;
 
-import com.lds.sistema_de_matriculas.enums.SubjectStatusEnum;
-import com.lds.sistema_de_matriculas.enums.SubjectTypeEnum;
+import com.lds.sistema_de_matriculas.domain.enums.SubjectStatusEnum;
+import com.lds.sistema_de_matriculas.domain.enums.SubjectTypeEnum;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -52,7 +52,7 @@ public class Subject {
     private SubjectStatusEnum status;
 
     @Column(nullable = false)
-    private Double prince;
+    private Double price;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "curriculum_id")
@@ -64,5 +64,18 @@ public class Subject {
 
     @ManyToMany(mappedBy = "subjects")
     private Set<CurriculumGrid> curriculumGrids;
+
+    public boolean enrollStudent(Student student) {
+        CurriculumGrid actualCurriculumGrid;
+
+        if (status == SubjectStatusEnum.OPEN && (actualCurriculumGrid = student.actualCurriculumGrid()) != null ) {
+
+            actualCurriculumGrid.addSubject(this);
+            curriculumGrids.add(actualCurriculumGrid);
+            return true;
+        }
+
+        return false;
+    }
 
 }
