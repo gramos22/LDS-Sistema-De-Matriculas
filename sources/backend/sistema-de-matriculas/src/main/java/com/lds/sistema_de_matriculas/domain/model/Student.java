@@ -1,19 +1,9 @@
 package com.lds.sistema_de_matriculas.domain.model;
 
-import java.util.Set;
-
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import java.util.List;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -21,48 +11,34 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-@Entity
-@Table(name = "student")
+@Document("students")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class Student {
-    
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "student_id")
-    private Long id;
+    private String id;
 
-    @Column(nullable = false)
-    private String name; 
+    @NotBlank(message = "Name cannot be blank")
+    private String name;
 
-    @Column(nullable = false)
-    @Email
+    @Email(message = "Invalid email format")
     private String email;
 
-    @Column(nullable = false)
-    @NotBlank
+    @NotBlank(message = "Password cannot be blank")
     private String password;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "course_id")
+    @DBRef
     private Course course;
 
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<CurriculumGrid> curriculumGrids;
+    @DBRef
+    private List<CurriculumGrid> curriculumGrids;
 
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Bill> bill;
+    @DBRef
+    private List<Bill> bills;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id")
+    @DBRef
     private Address address;
-
-    public CurriculumGrid actualCurriculumGrid() {
-        return curriculumGrids.stream()
-                .filter(CurriculumGrid::isCompleted).findFirst().orElse(null);
-    }
-
 }

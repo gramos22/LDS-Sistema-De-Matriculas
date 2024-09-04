@@ -1,18 +1,9 @@
 package com.lds.sistema_de_matriculas.domain.model;
 
-import java.util.Set;
-
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import java.util.List;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -20,39 +11,31 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-@Entity
-@Table(name = "professor")
+@Document("professors")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Professor{
+public class Professor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "professor_id")
-    private Long id;
+    private String id;
 
-    @Column(nullable = false)
-    private String name; 
+    @NotBlank(message = "Name cannot be blank")
+    private String name;
 
-    @Column(nullable = false)
-    @Email
+    @Email(message = "Invalid email format")
     private String email;
 
-    @Column(nullable = false)
-    @NotBlank
+    @NotBlank(message = "Password cannot be blank")
     private String password;
 
-    @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Subject> subjects;
+    @DBRef
+    private List<Subject> subjects;
 
-    @OneToMany(mappedBy = "professor", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Paycheck> paycheck;
-    
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id")
+    @DBRef
+    private List<Paycheck> paychecks;
+
+    @DBRef
     private Address address;
-    
 }

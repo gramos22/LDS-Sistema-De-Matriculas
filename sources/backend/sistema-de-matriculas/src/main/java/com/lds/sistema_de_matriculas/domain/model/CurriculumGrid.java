@@ -1,67 +1,33 @@
 package com.lds.sistema_de_matriculas.domain.model;
 
-import java.sql.Date;
-import java.util.Set;
+import java.util.Date;
+import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table(name = "curriculum")
+@Document("curriculum_grids")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class CurriculumGrid {
-    
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "curriculum_grid_id")
-    private Long id;
+    private String id;
 
-    @Column(name = "last_update")
-    @Temporal(TemporalType.DATE)
     private Date lastUpdate;
+    private boolean deferred;
+    private boolean completed;
 
-    @Column(name = "deferred")
-    private boolean deferred = false;
-
-    @Column(name = "completed")
-    private boolean completed = false;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "students_id")
+    @DBRef
     private Student student;
 
-    @ManyToMany
-    @JoinTable(
-        name = "curriculum_grid_subject",
-        joinColumns = @JoinColumn(name = "curriculum_grid_id"),
-        inverseJoinColumns = @JoinColumn(name = "subject_id")
-    )
-    private Set<Subject> subjects;
-
-    public boolean addSubject(Subject subject) {
-        return subjects.add(subject);
-    }
-
-    public boolean removeSubject(Subject subject) {
-        return subjects.remove(subject);
-    }
-
+    @DBRef
+    private List<Subject> subjects;
 }
