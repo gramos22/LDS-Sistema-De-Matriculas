@@ -1,5 +1,6 @@
 package com.lds.sistema_de_matriculas.domain.service;
 
+import com.lds.sistema_de_matriculas.application.dto.PaycheckDTO;
 import com.lds.sistema_de_matriculas.application.mapper.PaycheckMapper;
 import com.lds.sistema_de_matriculas.domain.model.Paycheck;
 import com.lds.sistema_de_matriculas.domain.model.Professor;
@@ -28,7 +29,9 @@ public class PaycheckService {
 
         Double paycheckValue = calculatePaycheckValue(professor);
 
-        Paycheck paycheck = new Paycheck(null, paycheckValue, new Date(), false, professor);
+        Paycheck paycheck = paycheckMapper.toPaycheck(new PaycheckDTO(paycheckValue, new Date(), false, professorId));
+        paycheck.setProfessor(professor);
+
         return paycheckRepository.save(paycheck);
     }
 
