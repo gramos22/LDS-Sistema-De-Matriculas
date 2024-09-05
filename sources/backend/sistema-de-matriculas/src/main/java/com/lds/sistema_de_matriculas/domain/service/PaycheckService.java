@@ -1,6 +1,5 @@
 package com.lds.sistema_de_matriculas.domain.service;
 
-import com.lds.sistema_de_matriculas.application.dto.PaycheckDTO;
 import com.lds.sistema_de_matriculas.application.mapper.PaycheckMapper;
 import com.lds.sistema_de_matriculas.domain.model.Paycheck;
 import com.lds.sistema_de_matriculas.domain.model.Professor;
