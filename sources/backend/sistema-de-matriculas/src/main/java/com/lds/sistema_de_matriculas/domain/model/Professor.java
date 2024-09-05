@@ -1,6 +1,8 @@
 package com.lds.sistema_de_matriculas.domain.model;
 
 import java.util.List;
+
+import com.lds.sistema_de_matriculas.domain.DomainConstants;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -38,4 +40,9 @@ public class Professor {
 
     @DBRef
     private Address address;
+
+    public double calcSalary() {
+        return DomainConstants.PROFESSOR_BASE_SALARY +
+                (DomainConstants.PROFESSOR_BASE_SALARY * (subjects.size() / 100.0));
+    }
 }

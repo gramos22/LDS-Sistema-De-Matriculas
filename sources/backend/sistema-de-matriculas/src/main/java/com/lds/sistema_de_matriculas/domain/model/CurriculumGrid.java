@@ -3,6 +3,7 @@ package com.lds.sistema_de_matriculas.domain.model;
 import java.util.Date;
 import java.util.List;
 
+import com.lds.sistema_de_matriculas.domain.DomainConstants;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -30,4 +31,8 @@ public class CurriculumGrid {
 
     @DBRef
     private List<Subject> subjects;
+
+    public Double calcPrice() {
+        return (DomainConstants.SUBJECT_PRICE * subjects.size());
+    }
 }

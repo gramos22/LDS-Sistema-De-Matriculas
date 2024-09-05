@@ -1,5 +1,6 @@
 package com.lds.sistema_de_matriculas.domain.model;
 
+import java.util.Comparator;
 import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -41,4 +42,13 @@ public class Student {
 
     @DBRef
     private Address address;
+
+    public CurriculumGrid getLastCurriculumGrid() {
+        if (curriculumGrids == null || curriculumGrids.isEmpty()) {
+            return null;
+        }
+        return curriculumGrids.stream()
+                .max(Comparator.comparing(CurriculumGrid::getLastUpdate))
+                .orElse(null);
+    }
 }
