@@ -9,9 +9,9 @@ This repository contains the Enrollment System project developed for the Softwar
 * [Júlia Moreira Nascimento](https://github.com/JulyaMoreyra)
 
 ## Project Description
-The Enrollment System is a software developed to automatize the process of course enrollment at a university.
+The Enrollment System is a software developed to automatize the course enrollment process at a university.
 
-The system allows students to enroll in both mandatory and elective sujectives, as well as enabling the cancellation of enrollments.
+The system allows students to enroll in mandatory and elective subjects and enables the cancellation of enrollments.
 
 The system also generates notifications for the university's billing system and provides professors with a view of which students are enrolled in their courses.
 
@@ -62,7 +62,7 @@ to define their enrollment time.
 ```
 As a secretary,
 I want a course to be automatically canceled if it has fewer than three students enrolled
-so that I don't have to allocate teachers to very small classes.
+so that I don't have to allocate teachers to small classes.
 ```
 
 ### US06
@@ -122,3 +122,59 @@ so that I can access my account.
 
 ![Diagrama de Classe](docs/ClassDiagram.png)
 [Acessar Figma](https://www.figma.com/board/Th7yAG7cy99eHgFXyXoaOa/Class-Diagram---Enrollment-System?node-id=0-1&t=nfERT34drKPhAzjv-0)
+
+## How to Run the Project
+
+### Prerequisites
+
+Make sure you have the following tools installed on your machine:
+- **Java Development Kit (JDK)** - Version 11 or higher
+- **Node.js** - Version 14 or higher
+- **Maven** - For managing Spring Boot dependencies
+- **Git** - For cloning the repository
+
+### Clone the Repository
+
+To get started, clone this repository to your local machine:
+
+```bash
+git clone https://github.com/your-username/your-repository.git
+````
+
+### Running the Backend (Spring Boot)
+1. Navigate to the `backend` directory:
+   
+    ```
+    cd LDS-Sistema-De-Matriculas/sources/backend
+    ```
+3. Install the project dependencies using Maven:
+    ```
+    mvn clean install
+    ``` 
+4. Run the Spring Boot application:
+    ```
+    mvn spring-boot:run
+    ```
+### Running the Frontend (React)
+
+1. Navigate to the `frontend` directory:
+   
+   ```
+   cd LDS-Sistema-De-Matriculas/sources/frontend/enrollment-system
+   ```
+3. Install the project dependencies using npm:
+   ```
+   npm install
+   ```
+4. Start the React application:
+   ```
+    npm start
+   ```
+The frontend should now be running at `http://localhost:3000`.
+
+### Accessing the Application
+Once both the backend and frontend are running, you can access the application by visiting:
+```
+http://localhost:3000
+```
+
