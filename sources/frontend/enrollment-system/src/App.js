@@ -1,12 +1,17 @@
 import "./App.css";
+import AppFooter from "./Components/AppFooter/index";
 import Login from "./Components/Login";
+import PageContent from "./Components/PageContent/index";
+import AppHeader from "./Components/AppHeader/index";
+import { Space } from "antd";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Login />
-      </header>
+      <AppHeader />
+      <PageContent></PageContent>
+
+      <AppFooter />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import loginImg from "../img/login-img.png";
 
 const Login = () => {
   return (
-    <Card sx={{ width: "30%" }}>
+    <Card sx={{ width: "30%" }} className="App-header">
       <img
         src={loginImg}
         alt="loginImg"
