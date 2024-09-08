@@ -1,9 +1,11 @@
 import React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Courses from "./Courses";
+import Courses from "../PageContent/Courses/Courses";
+import Curriculum from "../PageContent/Curriculum/Curriculum";
+import Subjets from "../PageContent/Subjects/Subjects";
 
-export default function PageContent() {
+export default function Dashboard() {
   const [value, setValue] = React.useState(2);
 
   const handleChange = (event, newValue) => {
@@ -24,7 +26,8 @@ export default function PageContent() {
         <Tab label="Curriculuns" />
         <Tab label="Courses" />
       </Tabs>
-
+      <Subjets />
+      <Curriculum />
       <Courses />
     </div>
   );
