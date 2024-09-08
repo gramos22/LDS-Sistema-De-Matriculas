@@ -1,7 +1,7 @@
 import "./App.css";
 import AppFooter from "./Components/AppFooter/index";
 import Login from "./Components/Login";
-import PageContent from "./Components/PageContent/index";
+import PageContent from "./Components/PageContent/Secretary/SecretaryPage";
 import AppHeader from "./Components/AppHeader/index";
 import { Space } from "antd";
 
