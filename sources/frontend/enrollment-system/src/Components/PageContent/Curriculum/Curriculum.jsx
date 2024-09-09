@@ -117,6 +117,7 @@ const Curriculum = () => {
               <TableCell align="center">Registration Deadline</TableCell>
               <TableCell align="center">Status</TableCell>
               <TableCell align="center">Actions</TableCell>
+              
             </TableRow>
           </TableHead>
           <TableBody>
